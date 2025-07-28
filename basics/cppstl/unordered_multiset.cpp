@@ -23,7 +23,7 @@ When is an unordered multiset used?
 */
 
 template <typename T>
-void print_multiset(std::unordered_multiset<T> &mset)
+void print_unordered_multiset(std::unordered_multiset<T> &mset)
 {
     for (const auto &element : mset)
     {
@@ -37,7 +37,7 @@ int main()
     // declaration and initialization
     std::unordered_multiset<int> int_umset = {10, 20, 10, 30, 10, 20, 30};
 
-    print_multiset(int_umset);
+    print_unordered_multiset(int_umset);
 
     std::cout << "Total size of this unordered multiset is: " << int_umset.size() << "\n\n";
 
@@ -51,13 +51,13 @@ int main()
     */
 
     std::cout << "Set before int_umset.erase(10):\n";
-    print_multiset(int_umset);
+    print_unordered_multiset(int_umset);
     std::cout << "Number of 10s before int_umset.erase(10): ";
     std::cout << int_umset.count(10) << "\n\n";
 
     int_umset.erase(10);
     std::cout << "Set after int_umset.erase(10):\n";
-    print_multiset(int_umset);
+    print_unordered_multiset(int_umset);
     std::cout << "Number of 10s after int_umset.erase(10): ";
     std::cout << int_umset.count(10) << "\n\n";
 
@@ -69,7 +69,7 @@ int main()
     {
         int_umset.erase(it);
     }
-    print_multiset(int_umset);
+    print_unordered_multiset(int_umset);
     std::cout << "Number of 20s after int_umset.erase(iterator): ";
     std::cout << int_umset.count(20);
     return 0;
