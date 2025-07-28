@@ -26,7 +26,7 @@ when to use unordered maps?
 */
 
 template <typename T>
-void print_unordered_map(std::unordered_map<std::string, T> &umap)
+void print_unordered_map(const std::unordered_map<std::string, T> &umap)
 {
     for (const auto &[key, value] : umap)
     {

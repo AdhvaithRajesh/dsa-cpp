@@ -23,7 +23,7 @@ When is an unordered multiset used?
 */
 
 template <typename T>
-void print_unordered_multiset(std::unordered_multiset<T> &mset)
+void print_unordered_multiset(const std::unordered_multiset<T> &mset)
 {
     for (const auto &element : mset)
     {
