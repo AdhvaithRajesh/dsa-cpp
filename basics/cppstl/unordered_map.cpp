@@ -26,7 +26,7 @@ when to use unordered maps?
 */
 
 template <typename T>
-void print_unordered_map(std::unordered_map<T, T> &umap)
+void print_unordered_map(std::unordered_map<std::string, T> &umap)
 {
     for (const auto &[key, value] : umap)
     {
@@ -71,4 +71,5 @@ int main()
     fruit_counts.erase("apple");
 
     // iterating through a map can be done using range based for and structured bindings
+    print_unordered_map(fruit_prices);
 }
