@@ -8,6 +8,16 @@ container adapter that models a real-world waiting line
     - container adapter - isn't a full container; wrapper around std::deque to provide a restricted interface
 restricted access - can only interact with elements at the front and the back of the queue
 all operations are O(1)
+
+When to use queue?
+- Breadth-first search (BFS)
+    - used to explore graph or tree layer by layer
+    - used to finding shortest path in unweighted graph
+    - manages nodes to visit next - ensuring all nodes at a specific depth are processed before moving to next level
+- Level Order Traversal
+    - BFS applied to a tree
+    - root, its children, then their children, and so on
+- Simulations wherever a waiting line is involved
 */
 
 template <typename T>
