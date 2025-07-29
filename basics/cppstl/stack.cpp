@@ -13,15 +13,20 @@ restricted access - can only access the element at the top of the stack
 all operations are O(1)
 
 When to use stack?
-- sliding window minimum/maximum
-    - most popular use-case of deque in competitive programming
-    - find maximum/minimum element in every subarray of size k
-    - deque used to maintain list of candidate indices
-        - double ended nature helps with adding and discarding from both ends
-
-- implementing queue or stack but with iteration
-    - std::stack and std::queue are wrappers around std::deque
-    - since it is the underlying container, it can be used to implement either of these with iteration
+- valid parentheses
+    - classic stack problem
+    - when you see an opening bracket, push it onto the stack
+    - when you see a closing bracket, check if the top of the stack is the matching opening bracket.
+        - if it is, pop
+        - otherwise, invalid
+- depth-first search
+    - usually implemented recursively
+    - but iterative DFS uses an explicit stack to keep track of nodes to visit
+- expression evaluation
+    - converting infix to postfix
+    - evaluating postfix
+- next greater element
+    - I don't know how this works just yet, will update this when i have a clue
 */
 
 template <typename T>
