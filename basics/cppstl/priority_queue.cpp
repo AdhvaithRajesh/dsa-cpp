@@ -13,6 +13,17 @@ Key properties
 - Logarithmic time complexity
     - pushing and removing top element takes O(log N) since heap needs to be restructured
     - accessing top element is O(1)
+- container adapter
+
+When to use priority queue?
+- "Top K" / "Kth largest/smallest" problems - common use case
+    - to find Kth largest/smallest element, maintain a priority queue of size K
+
+- Graph algorithms - Dijkstra's, Prim's
+    - for finding shortest path or minimum spanning trees, min-priority queue is required for selecting next node or edge with least weight
+
+- Merging K sorted lists
+    - can be used to track smallest elements across all K lists
 */
 
 int main()
