@@ -1,6 +1,37 @@
 #include <iostream>
 #include <unordered_map>
 #include <vector>
+#include <limits>
+
+struct MinMaxResult
+{
+    int minkey;
+    int minvalue;
+    int maxkey;
+    int maxvalue;
+};
+
+template <typename keyT, typename valueT>
+MinMaxResult find_min_max(const std::unordered_map<keyT, valueT> &da_map)
+{
+    MinMaxResult result;
+    result.minvalue = std::numeric_limits<int>::max();
+    result.maxvalue = std::numeric_limits<int>::lowest();
+    for (const auto &[key, value] : da_map)
+    {
+        if (value > result.maxvalue)
+        {
+            result.maxvalue = value;
+            result.maxkey = key;
+        }
+        if (value < result.minvalue)
+        {
+            result.minvalue = value;
+            result.minkey = key;
+        }
+    }
+    return result;
+}
 
 template <typename T>
 void print_vector(const std::vector<T> &da_vecta)
@@ -44,4 +75,10 @@ int main()
 
     std::cout << "frequency map:\n";
     print_map(frequency);
+
+    MinMaxResult res;
+    res = find_min_max(frequency);
+
+    std::cout << "The most frequently occuring key is " << res.maxkey << " with " << res.maxvalue << " occurences\n";
+    std::cout << "The least frequently occuring key is " << res.minkey << " with " << res.minvalue << " occurences\n";
 }
