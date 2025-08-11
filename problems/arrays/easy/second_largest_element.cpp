@@ -38,10 +38,9 @@ int secondLargestElement(std::vector<int> &da_vec)
 
 int main()
 {
-    std::vector<int> nums = {12, 19, 19, 5, 4, 99, 8};
+    std::vector<int> nums = {12, 12, 12, 12};
     std::cout << "Vector: ";
     print_vector(nums);
     std::cout << "Second largest Element: ";
-    std::cout << secondLargestElement(nums) << "\n";
     std::cout << secondLargestElement(nums) << "\n";
 }
